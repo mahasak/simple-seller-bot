@@ -19,7 +19,7 @@ const router = express();
 applyMiddleware(middleware, router);
 applyRoutes(routes, router);
 
-const { PORT = 3000 } = process.env;
+const PORT = parseInt(process.env.APP_PORT ?? "3000");
 const server = http.createServer(router);
 
 server.listen(PORT, () =>

@@ -1,5 +1,7 @@
 import { Request, Response } from "express";
 import { handleMessage } from "./handleMessage";
+import { handleSellerCommand } from "./handleSellerCommand";
+import { EventEmitter } from "events";
 
 export const processRequest = async (req: Request, res: Response) => {
     const data = req.body;
@@ -9,12 +11,13 @@ export const processRequest = async (req: Request, res: Response) => {
         data.entry.forEach((entry: any) => {
             const pageID = entry.id;
             const timeOfEvent = entry.time;
-
             entry.messaging.forEach((event: any) => {
                 let sender_psid = event.sender.id;
                 console.log('Sender PSID: ' + sender_psid);
-
-                if (event.message) {
+                console.log(event);
+                if (sender_psid === "2199911393591385") {
+                    handleSellerCommand( event.recipient.id, event.message);
+                } else if (event.message) {
                     handleMessage(sender_psid, event.message);
                 }// else if (webhook_event.postback) {
                 //    handlePostback(sender_psid, webhook_event.postback);
