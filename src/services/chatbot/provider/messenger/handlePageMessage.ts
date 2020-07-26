@@ -1,6 +1,6 @@
 import {getPageInfo , sendMessage} from './api'
 
-export const handleSellerCommand = async (sender_psid: any, received_message: any) => {
+export const handlePageMessage = async (sender_psid: any, received_message: any) => {
   let response;
   console.log("Process seller action")
   if (received_message.text && received_message.text === "#cash") {
