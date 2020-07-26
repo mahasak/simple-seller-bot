@@ -5,7 +5,7 @@
   "main": "./dist/server.js",
   "scripts": {
     "dev": "tsc-watch --onSuccess \"node ./dist/server.js\"",
-    "build": "tsc -p ./src/server.ts",
+    "build": "tsc --build tsconfig.json",
     "test": "jest --coverage --verbose"
   },
   "keywords": [],
