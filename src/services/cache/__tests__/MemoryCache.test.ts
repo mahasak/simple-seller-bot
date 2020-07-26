@@ -1,5 +1,5 @@
-import { MemoryCache } from '../MemoryCache'
-import { ICachedItem} from '../ICache'
+import { MemoryCache } from '../memoryCache'
+import { ICachedItem} from '../cache'
 
 const cache = new MemoryCache()
 
