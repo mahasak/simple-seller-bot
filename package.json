@@ -1,11 +1,11 @@
 {
   "name": "thailand-restaurant-bot",
   "version": "1.0.0",
-  "description": "Thailand Restaurant Bot",
-  "main": "index.js",
+  "description": "Simple Seller Bot",
+  "main": "./dist/server.js",
   "scripts": {
     "dev": "tsc-watch --onSuccess \"node ./dist/server.js\"",
-    "devx": "ts-node ./src/server.ts",
+    "build": "tsc -p ./src/server.ts",
     "test": "jest --coverage --verbose"
   },
   "keywords": [],
@@ -13,7 +13,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mahasak/thailand-restaurant-bot.git"
+    "url": "https://github.com/mahasak/simple-seller-bot.git"
   },
   "dependencies": {
     "@types/compression": "^1.7.0",
