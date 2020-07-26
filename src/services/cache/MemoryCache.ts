@@ -1,4 +1,4 @@
-import { ICache, ICachedItem} from './ICache'
+import { ICache, ICachedItem} from './cache'
 
 interface IHash {
     [key: string] : any;
