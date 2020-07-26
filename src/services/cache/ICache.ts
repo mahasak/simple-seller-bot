@@ -1,5 +1,4 @@
 export interface ICachedItem {
-  key: string;
   created: number;
   ttl: number;
   item: any;
