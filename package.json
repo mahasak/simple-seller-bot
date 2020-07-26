@@ -1,5 +1,5 @@
 {
-  "name": "thailand-restaurant-bot",
+  "name": "simple-seller-bot",
   "version": "1.0.0",
   "description": "Simple Seller Bot",
   "main": "./dist/server.js",
