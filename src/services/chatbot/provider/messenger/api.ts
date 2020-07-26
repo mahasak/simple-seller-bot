@@ -8,6 +8,7 @@ const MESSAGE_API = `https://graph.facebook.com/${config.api_version}/me/message
 const PROFILE_API = `https://graph.facebook.com/${config.api_version}/me/messenger_profile`;
 
 export const sendMessage = async (psid: any, response: any) => {
+  // TODO : Add logging here
   let request_body = {
     "recipient": {
       "id": psid
@@ -20,6 +21,7 @@ export const sendMessage = async (psid: any, response: any) => {
 }
 
 export const setupPersistentMenu = async (menu: any, getStarted: any) => {
+  // TODO : Add logging here
   let request_body = {
     "get_started": getStarted,
     "persistent_menu": menu,
@@ -30,6 +32,7 @@ export const setupPersistentMenu = async (menu: any, getStarted: any) => {
 }
 
 const invokeApi = async (api: string, payload: any) => {
+  // TODO : Add logging here
   await fetch(api, {
     method: 'post',
     body: JSON.stringify(payload),
@@ -48,7 +51,7 @@ export const getPageInfo = async () => {
   }
   
   Object.keys(params).forEach(key => url.searchParams.append(key, params[key]))
-
+  // TODO : Add logging here
   const response = await fetch(url, {
     method: 'get',
     headers: { 'Content-Type': 'application/json' },

@@ -19,27 +19,8 @@ export const processRequest = async (req: Request, res: Response) => {
                     handlePageMessage( event.recipient.id, event.message);
                 } else if (event.message) {
                     handleMessage(sender_psid, event.message);
-                }// else if (webhook_event.postback) {
-                //    handlePostback(sender_psid, webhook_event.postback);
-                //}
-            })
-            /*
-            entry.messaging.forEach((event: any) => {
-                if (event.message) {
-                    receivedMessage(event)
-                } else if (event.delivery) {
-                    receivedDeliveryConfirmation(event)
-                } else if (event.postback) {
-                    receivedPostback(event)
-                } else if (event.read) {
-                    receivedMessageRead(event)
-                } else if (event.account_linking) {
-                    receivedAccountLink(event)
-                } else {
-                    console.log(`Webhook received unknown messagingEvent: ${event}`)
                 }
-            });
-            */
+            })
         });
         res.status(200).send('EVENT_RECEIVED');
     } else {
